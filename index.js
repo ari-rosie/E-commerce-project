@@ -35,8 +35,11 @@ express()
   .get("/categories/:categoryName", handlers.handleCategory)
   .put("/order", handlers.handlePurchase)
 
+  // .get("/*", (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  // })  
   .get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.send("this works!");
   })  
 
 
