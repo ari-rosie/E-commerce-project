@@ -24,7 +24,7 @@ express()
   .use(express.static("./server/assets"))
   .use(bodyParser.json())
   .use(express.urlencoded({ extended: false }))
-  // .use("/", express.static(path.join(__dirname, "build")))
+  .use("/", express.static(__dirname + "/"))
 
   // REST endpoints
   .get("/items", handlers.handleItems)
