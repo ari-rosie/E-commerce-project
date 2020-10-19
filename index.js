@@ -24,7 +24,7 @@ express()
   .use(express.static("./server/assets"))
   .use(bodyParser.json())
   .use(express.urlencoded({ extended: false }))
-  .use("/", express.static(__dirname + "/"))
+  .use("/", express.static(path.join(__dirname, "build")))
 
   // REST endpoints
   .get("/items", handlers.handleItems)
@@ -35,11 +35,8 @@ express()
   .get("/categories/:categoryName", handlers.handleCategory)
   .put("/order", handlers.handlePurchase)
 
-  // .get("/*", (req, res) => {
-  //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  // })  
   .get("/*", (req, res) => {
-    res.send("this works!");
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
   })  
 
 
