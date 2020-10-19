@@ -25,11 +25,11 @@ import { useSelector } from "react-redux";
 
 function App() {
   const error = useSelector((state) => state.errorReducer.error);
-  UseFetchData(requestAllItems, receiveAllItems, "http://localhost:3000/items");
+  UseFetchData(requestAllItems, receiveAllItems, "/items");
   UseFetchData(
     requestAllCompanies,
     receiveAllCompanies,
-    `http://localhost:3000/companies`
+    `/companies`
   );
   UseFetchData(requestAllCategories, receiveAllCategories, "/categories");
 
